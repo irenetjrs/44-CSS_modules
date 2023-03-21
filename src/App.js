@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Add from "./components/Add";
 import Product from "./components/Product";
+import styles from "./scss/style.scss";
 
 function App () {
 
@@ -29,9 +30,9 @@ const addProducts = (setNewProducts, newProducts, isValidateName, isValidatePric
   }
 
 return (
-<div className="wrapper">
+<div className={styles.wrapper}>
   <Add onAddProduct={addProducts} />
-  <div className="list">
+  <div className={styles.list}>
     {products.map(product => <Product onRemove={removeProduct} key={product.id} id={product.id} name={product.name} price={`${product.price} $`} />)}
   </div>
 </div> 
